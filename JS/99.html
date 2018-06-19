@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table,
+        td {
+
+            border: red solid 2px;
+            background-color: aquamarine;
+            color: blue;
+            border-collapse: collapse;
+        }
+    </style>
+
+    <script>
+
+        document.write("<table><tr>")
+        for (var x = 1; x < 10; x++) {
+            document.write("<td>");
+            for (var y = 1; y < 10; y++) {
+                document.write(x + "x" + y + "=" + (x * y) + "<br>");
+            }
+            document.write("</td>");
+
+        }
+        document.write("</tr></table>")
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

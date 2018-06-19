@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>資料填寫</title>
+    <style>
+        fieldset {
+            width: 500px;
+            border: 1px solid #acd6ff;
+            border-radius: 20px;
+            margin: 15px;
+        }
+
+        label {
+            width: 450px;
+            margin: 20px;
+            padding-bottom: 10px;
+        }
+
+        .txt {
+            font-size: 80%;
+            margin: 20px;
+            width: 450px;
+            color: gray;
+        }
+    </style>
+    <script>
+        function checkUserName() {
+            var thename = document.getElementById("account").value;
+            var cn = /^[\u4e00-\u9fff]{2,}$/;
+            if (thename == "") {
+                document.getElementById("idsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("idsp").style.color = "red";
+            }
+            else {
+                if (cn.test(thename)) {
+                    document.getElementById("idsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                    document.getElementById("idsp").style.color = "blue";
+                } else {
+                    document.getElementById("idsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                    document.getElementById("idsp").style.color = "red";
+
+                }
+            }
+        }
+
+        function checkUserPwd() {
+            var thePwd = document.getElementById("pwd1").value;
+            var num = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[\W]).{6,10}$/;
+            if (thePwd == "") {
+                document.getElementById("pwdsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("pwdsp").style.color = "red";
+            }
+            else if (num.test(thePwd)) {
+                document.getElementById("pwdsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                document.getElementById("pwdsp").style.color = "blue";
+            }
+            else {
+                document.getElementById("pwdsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                document.getElementById("pwdsp").style.color = "red";
+            }
+
+        }
+        function checkBirth() {
+            var thebirth = document.getElementById("birth").value;
+            var date = thebirth.split("/")
+            var theYear = date[0];
+            var theMonth = date[1];
+            var theDate = date[2];
+
+            var d = new Date(thebirth);
+            var newYear = d.getFullYear();
+            var newMonth = d.getMonth() + 1;
+            var newDate = d.getDate();
+
+            if (thebirth == "") {
+                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("birthsp").style.color = "red";
+            }
+            else if (theYear < 1888) {
+                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>穿越劇？</i>";
+                document.getElementById("birthsp").style.color = "red";
+            }
+            else if (date[2] == newDate) {
+                document.getElementById("birthsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                document.getElementById("birthsp").style.color = "blue";
+            }
+            else {
+                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                document.getElementById("birthsp").style.color = "red";
+            }
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>個人資料(必填)</legend>
+        <div class="">
+            <label for="account">姓名：</label>
+            <input type="text" id="account" name="userName" placeholder="請輸入姓名" autocomplete="off" size="10" onblur="checkUserName()">
+            <span id="idsp"></span>
+            <br>
+            <span class="txt">【必須為兩個以上中文字】</span>
+            <hr>
+        </div>
+
+        <div class="">
+            <label for="pwd1">密碼：</label>
+            <input type="password" id="pwd1" name="userPwd" placeholder="請輸入密碼" maxlength="10" onblur="checkUserPwd()">
+            <span id="pwdsp"></span>
+            <br>
+            <span class="txt">【密碼為6~10字，須包含英文字母、數字及特殊符號字元(如!@#$%^&*[])】</span>
+            <hr>
+        </div>
+
+        <div class="">
+            <label for="">生日：</label>
+            <input type="text" id="birth" placeholder="ex.2018/06/19" onblur="checkBirth()">
+            <span id="birthsp"></span>
+            <br>
+            <span class="txt">【格式：西元年/月/日 yyyy/dd/mm】</span>
+            <hr>
+        </div>
+<div style="margin-left: 30%;">
+        <input class="button" type="submit" value="【送出】">
+        <input class="button" type="reset" value="【清除】">
+    </div>
+    </fieldset>
+</body>
+
+</html>
