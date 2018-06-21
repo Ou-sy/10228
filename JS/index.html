@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 120%;
+            font-family: 微軟正黑體;
+            color: #333333;
+            background-color: lightgreen;
+        }
+
+        * {
+            /*body裡所有元素 */
+            margin: 0;
+            padding: 0;
+            font-size: 100%
+        }
+
+        #allpage {
+            width: 1000px;
+            margin: auto;
+        }
+
+        .menu {
+            overflow: auto;
+            width: 100%;
+            list-style-type: none;
+            background-color: darkblue;
+            border-bottom: 3px solid #cccccc;
+            border-top-right-radius: 15px;
+            border-top-left-radius: 15px;
+        }
+
+        .menu li {
+            float: left;
+            width: 10.365em;
+            /*為了讓連結區域能依字型大小的變化自動放大,因此在指定width屬性時採用em為單位*/
+            border-right: 1px solid #cccccc;
+        }
+
+        .menu li a {
+            display: block;
+            /*要設為block才能置中*/
+            width: 100%;
+            line-height: 2.5em;
+            /*讓文字上下空出適當的空白,不用padding屬性,直接將行Box的高度設的高一些*/
+            color: yellow;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .menu li a:hover {
+            color: darkblue;
+            background-color: yellow;
+            float: left;
+        }
+
+        .content {
+            overflow: auto;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+
+        article {
+            float: left;
+            width: 75%;
+        }
+
+        aside {
+            float: right;
+            width: 20%;
+
+        }
+
+        .title {
+            background-color: #0066CC;
+            line-height: 2.5em;
+            color: #F0F0F0;
+            padding-left: 20px;
+        }
+
+        article section {
+            margin: 16px;
+            border-bottom: 1px solid #cccccc;
+            padding-bottom: 10px;
+        }
+
+        article section p {
+            margin: 10px 0;
+        }
+
+
+        .list1 {
+            list-style: decimal inside;
+        }
+
+        aside dl {
+            margin: 16px;
+        }
+
+        footer {
+            width: 100%;
+
+            line-height: 2.5em;
+            text-align: center;
+            color: #ffffff;
+            background-color: #66B3FF;
+            border-bottom-right-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+    </style>
+    <script>
+        function LoadFunction(aID) {
+            var iFUN = document.getElementById(aID.id);
+            var iPRG = document.getElementById("iframe1");
+            if (iFUN.id == "99") {
+                iPRG.src = "99.html";
+            } else if (iFUN.id == "userinfo") {
+                iPRG.src = "userinfo.html";
+            } else if (iFUN.id == "star") {
+                iPRG.src = "star.html";
+            } else {
+                iPRG.src = "99.html";
+            };
+        }
+    </script>
+</head>
+
+<body>
+    <div id="allpage">
+        <header>
+            <nav>
+                <ul class="menu">
+                    <li>
+                        <a href="#" onClick="LoadFunction(this);" id="99">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="LoadFunction(this);" id="userinfo">個人資料驗證</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="LoadFunction(this);" id="star">評點系統</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="LoadFunction(this);" id="">圖片輪播</a>
+                    </li>
+                    <li>
+                        <a href="#" onClick="LoadFunction(this);" id="">萬年曆</a>
+                    </li>
+                </ul>
+            </nav>
+            <image src="Images/banner.jpg" alt="LOGO" title="banner" width="1000px"></image>
+        </header>
+        <section>
+            <article>
+            <div align="left" style="position: absolute;width: 1000px; height: 500px;">
+                <iframe src="99.html" id="iframe1" width="100%" height="100%"></iframe>
+            </div>
+        </article>
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+
+</html>
