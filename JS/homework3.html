@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>homework3</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<style>
+    .s1 {
+        font-size: 30px;
+        color: crimson;
+        text-align: center;
+    }
+</style>
+<script>
+
+    var flag = true;
+    document.addEventListener("DOMContentLoaded", function () {
+        var point = document.querySelectorAll("img.imgbut");
+        var pointLen = point.length;
+        for (var i = 0; i < point.length; i++) {
+            point[i].addEventListener("mouseover", mouseOver);
+            point[i].addEventListener("mouseout", mouseOut);
+            point[i].addEventListener("click", Click);
+        }
+    });
+
+    function mouseOver() {
+        var imgs = document.getElementsByClassName("imgbut");
+        var leng = this.id.substr(5)
+        // alert(leng);
+        var leng1 = document.querySelectorAll("img.imgbut").length
+        // alert(leng);
+        document.getElementById("score").textContent = "評分中..." + leng;
+        for (var i = 0; i < leng1; i++) {
+            if (i < leng)
+                imgs[i].src = "Images/01.png";
+                // document.images[i].setAttribute("src", "Images/01.png");
+            else
+                imgs[i].src = "Images/01.jpg";
+                // document.images[i].setAttribute("src", "Images/01.jpg");
+//https://zhidao.baidu.com/question/360207789057319012.html
+        }
+    }
+
+    function mouseOut() {
+        var imgs = document.getElementsByClassName("imgbut");
+        var leng1 = document.querySelectorAll("img.imgbut").length;
+        // alert(leng);
+        if (flag) {
+            document.getElementById("score").textContent = " ";
+
+            for (var i = 0; i < leng1; i++) {
+                imgs[i].src = "Images/01.jpg";
+                // document.images[i].src = "Images/01.jpg";
+            }
+        } flag = true;
+    }
+    function Click() {
+        var leng2 = this.id.substr(5);
+        document.getElementById("score").textContent = "恭喜你獲得了" + leng2 + "顆星!"
+        flag = false;
+    }
+</script>
+
+<body>
+
+    <div id="allpage" ;>
+
+        <header>
+            <img src="Images/100.jpg" alt="logo" title="logo" width="1000px">
+            <nav>
+                <ul class="menu">
+
+                    <li>
+                        <a href="homework1.html">九九乘法表</a>
+                    </li>
+                    <li>
+                        <a href="homework2.html">表單驗證</a>
+                    </li>
+                    <li>
+                        <a href="homework3.html">評點系統</a>
+                    </li>
+                    <li>
+                        <a href="homework4.html">廣告輪播</a>
+                    </li>
+                    <li>
+                        <a href="homework5.html">日曆</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <div class="content">
+            <article>
+                <div>
+
+                    <div>
+                        <img id="point1" class="imgbut" src="Images/01.jpg" alt=1分 />
+                        <img id="point2" class="imgbut" src="Images/01.jpg" alt=2分/>
+                        <img id="point3" class="imgbut" src="Images/01.jpg" alt=3分/>
+                        <img id="point4" class="imgbut" src="Images/01.jpg" alt=4分/>
+                        <img id="point5" class="imgbut" src="Images/01.jpg" alt=5分/>
+                        <br>
+                        <span class="s1" id="score">評分中...</span>
+                        </p>
+
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <footer>
+            <p>
+                E-amil:aaa@gmail.com &nbsp; Tel:(02)2222-2222 &nbsp; 台北市復興南路一段390號 &nbsp; &copy; 2014 All Rights Reserved Quality Art Technology
+                CO.
+            </p>
+        </footer>
+
+    </div>
+    <!-- end allpage -->
+</body>
+
+</html>
