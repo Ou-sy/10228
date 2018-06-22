@@ -53,7 +53,29 @@
     }
 </style>
 <script>
+    var index;
+    var imgs = document.getElementsByTagName("img");
 
+    document.addEventListener("DOMContentLoaded", action)
+
+    function action() {
+        for (var i = 1; i <= imgs.length; i++) {
+            document.getElementById("light" + i).addEventListener("mouseover", mouseover);
+            document.getElementById("light" + i).addEventListener("mouseout", mouseout);
+            document.getElementById("light" + i).addEventListener("click", submit);
+        }
+    }
+    function mouseover() {
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].src = "Images/light.png";
+            if (event.target.id == imgs[i].id) {
+                index = i;
+                document.getElementById("result").innerHTML = "評分中...<br><span>【" + (index + 1) + "】</span>盞燈";
+                document.getElementById("result").className = "score"
+                break;
+            }
+        }
+    }
 </script>
 
 <body>
