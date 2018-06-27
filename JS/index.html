@@ -126,7 +126,9 @@
                 iPRG.src = "star.html";
             } else if (iFUN.id == "window") {
                 iPRG.src = "window.html";
-            } else {
+            } else if (iFUN.id == "calendar") {
+                iPRG.src = "calendar.html";
+            }else {
                 iPRG.src = "99.html";
             };
         }
@@ -151,7 +153,7 @@
                         <a href="#" onClick="LoadFunction(this);" id="window">圖片輪播</a>
                     </li>
                     <li>
-                        <a href="#" onClick="LoadFunction(this);" id="">萬年曆</a>
+                        <a href="#" onClick="LoadFunction(this);" id="calendar">萬年曆</a>
                     </li>
                 </ul>
             </nav>
