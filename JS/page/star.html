@@ -47,7 +47,7 @@
         }
         function mouseover() {
             for (var i = 0; i < imgs.length; i++) {
-                imgs[i].src = "Images/light.png";
+                imgs[i].src = "../Images/light.png";
                 if (event.target.id == imgs[i].id) {
                     index = i;
                     document.getElementById("result").innerHTML = "評分中...<br><span>【" + (index + 1) + "】</span>盞燈";
@@ -59,7 +59,7 @@
         function mouseout() {
             var imgs = document.getElementsByTagName("img");
             for (var i = 0; i < imgs.length; i++) {
-                imgs[i].src = "Images/dark.png";
+                imgs[i].src = "../Images/dark.png";
             }
             // document.getElementById("result").innerHTML = "請評分";
         }
@@ -73,11 +73,11 @@
 
 <body>
     <figure>
-        <img src="Images/dark.png" id="light1">
-        <img src="Images/dark.png" id="light2">
-        <img src="Images/dark.png" id="light3">
-        <img src="Images/dark.png" id="light4">
-        <img src="Images/dark.png" id="light5">
+        <img src="../Images/dark.png" id="light1">
+        <img src="../Images/dark.png" id="light2">
+        <img src="../Images/dark.png" id="light3">
+        <img src="../Images/dark.png" id="light4">
+        <img src="../Images/dark.png" id="light5">
 
         <p id="result">請評分</p>
     </figure>

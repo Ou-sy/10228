@@ -32,15 +32,15 @@
             var thename = document.getElementById("account").value;
             var cn = /^[\u4e00-\u9fff]{2,}$/;
             if (thename == "") {
-                document.getElementById("idsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("idsp").innerHTML = "<img src='../Images/error.png'><i>必填</i>";
                 document.getElementById("idsp").style.color = "red";
             }
             else {
                 if (cn.test(thename)) {
-                    document.getElementById("idsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                    document.getElementById("idsp").innerHTML = "<img src='../Images/OK.gif'><i>正確</i>";
                     document.getElementById("idsp").style.color = "blue";
                 } else {
-                    document.getElementById("idsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                    document.getElementById("idsp").innerHTML = "<img src='../Images/error.png'><i>錯誤，請重新輸入</i>";
                     document.getElementById("idsp").style.color = "red";
 
                 }
@@ -51,15 +51,15 @@
             var thePwd = document.getElementById("pwd1").value;
             var num = /^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[\W]).{6,10}$/;
             if (thePwd == "") {
-                document.getElementById("pwdsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("pwdsp").innerHTML = "<img src='../Images/error.png'><i>必填</i>";
                 document.getElementById("pwdsp").style.color = "red";
             }
             else if (num.test(thePwd)) {
-                document.getElementById("pwdsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                document.getElementById("pwdsp").innerHTML = "<img src='../Images/OK.gif'><i>正確</i>";
                 document.getElementById("pwdsp").style.color = "blue";
             }
             else {
-                document.getElementById("pwdsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                document.getElementById("pwdsp").innerHTML = "<img src='../Images/error.png'><i>錯誤，請重新輸入</i>";
                 document.getElementById("pwdsp").style.color = "red";
             }
 
@@ -77,19 +77,19 @@
             var newDate = d.getDate();
 
             if (thebirth == "") {
-                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>必填</i>";
+                document.getElementById("birthsp").innerHTML = "<img src='../Images/error.png'><i>必填</i>";
                 document.getElementById("birthsp").style.color = "red";
             }
             else if (theYear < 1888) {
-                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>穿越劇？</i>";
+                document.getElementById("birthsp").innerHTML = "<img src='../Images/error.png'><i>穿越劇？</i>";
                 document.getElementById("birthsp").style.color = "red";
             }
             else if (date[2] == newDate) {
-                document.getElementById("birthsp").innerHTML = "<img src='Images/OK.gif'><i>正確</i>";
+                document.getElementById("birthsp").innerHTML = "<img src='../Images/OK.gif'><i>正確</i>";
                 document.getElementById("birthsp").style.color = "blue";
             }
             else {
-                document.getElementById("birthsp").innerHTML = "<img src='Images/error.png'><i>錯誤，請重新輸入</i>";
+                document.getElementById("birthsp").innerHTML = "<img src='../Images/error.png'><i>錯誤，請重新輸入</i>";
                 document.getElementById("birthsp").style.color = "red";
             }
         }
